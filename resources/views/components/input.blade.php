@@ -4,7 +4,7 @@
             <span class="text-danger">*</span>
         @endif
     </label>
-    <input type="{{ $type ?? 'text' }}" {{ $slot }}  name="{{ $name ?? '' }}" value="{{ old($name, $value ?? null) }}" class="form-control @error($name) is-invalid @enderror" {{ $required ?? '' }} >
+    <input type="{{ $type ?? 'text' }}" {{ $slot }}  name="{{ $name ?? '' }}" value="{{ old($name, $value ?? null) }}" class="form-control @error($name) is-invalid @enderror" {{ $required ? 'required' : '' }} id="{{ $id ?? $name }}">
     @error($name)
         <div class="invalid-feedback">
             {{ $message }}

@@ -26,6 +26,7 @@ class CreateCadastrosTable extends Migration
             $table->string('str_estado', 2)->nullable();
             $table->string('str_telefone_fixo', 10)->nullable();
             $table->string('str_telefone_celular', 11)->nullable();
+            $table->integer('int_passo')->nullable();
         });
     }
 

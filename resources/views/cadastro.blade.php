@@ -8,7 +8,7 @@
                     <li class="active">
                         <span class="f-s-12">1º Passo</span> <br> Identificação
                     </li>
-                    <li class="@if(request()->get('passo', null) == 2) active @endif">
+                    <li class="@if(request()->get('passo', null) >= 2) active @endif">
                         <span class="f-s-12">2º Passo</span> <br> Endereço
                     </li>
                     <li class="@if(request()->get('passo', null) == 3) active @endif" >
@@ -23,11 +23,31 @@
                 @method('PUT')
 
                 @if(request()->get('passo', null) != 2 && request()->get('passo', null) != 3 )
+                    
                     @include('includes.inputs-identificacao')
-                @endif
                 
+                @elseif(request()->get('passo', null) == 2)
+                
+                    @include('includes.inputs-endereco')
+                
+                @elseif(request()->get('passo', null) == 3)
+                    @include('includes.inputs-contato')
+                @endif
+
+                <input type="hidden" name="int_passo" value="{{ request()->get('passo', null) ?? $cadastro->int_passo }}">
+                
+                @if((request()->get('passo', null) == 2) || (request()->get('passo', null) == 3) )
+                    <a class="btn btn-secondary float-left" href="{{ url('cadastro').'/'.$cadastro->id.'?passo=' }}{{ intval(request()->get('passo')) - 1 }}">
+                        Passo anterior
+                    </a>
+                @endif
+
                 <button class="btn btn-primary float-right" type="submit">
-                    Próximo
+                    @if(request()->get('passo') != 3 )
+                        Próximo
+                    @else
+                        Finalizar
+                    @endif
                 </button>
 
             </form>

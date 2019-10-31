@@ -145,5 +145,13 @@ return [
 
     'attributes' => [
         'str_nome' => 'Nome Completo',
+        'dta_nascimento' => 'Data de Nascimento',
+        'str_rua' => 'Rua',
+        'str_numero' => 'Número',
+        'str_cep' => 'CEP',
+        'str_cidade' => 'Cidade',
+        'str_estado' => 'Estado',
+        'str_telefone_fixo' => 'Telefone Fixo',
+        'str_telefone_celular' => 'Celular',
     ],
 ];
