@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 
         <!-- Styles -->
         <style>
@@ -81,19 +83,30 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{-- Bem Vindo! --}}
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <form class="form-inline" method="POST">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputCpf" class="sr-only">CPF</label>
+                        <input type="text" name="str_cpf" class="form-control" id="inputCpf" placeholder="CPF">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button>
+                </form>
             </div>
         </div>
+
+        <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}"></script>
+        <script src="{{ asset('js/popper.min.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.mask.js') }}"></script>
+
+        <script>
+            $(document).ready(function(){
+                $("#inputCpf").mask("000.000.000-00");
+            });
+        </script>
     </body>
 </html>
