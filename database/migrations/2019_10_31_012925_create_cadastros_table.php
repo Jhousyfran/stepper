@@ -17,15 +17,15 @@ class CreateCadastrosTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('str_cpf', 11);
-            $table->string('str_nome', 200);
-            $table->date('dta_nascimento');
-            $table->string('str_rua', 50);
-            $table->string('str_numero', 10);
-            $table->string('str_cep', 8);
-            $table->string('str_cidade', 100);
-            $table->string('str_estado', 2);
-            $table->string('str_telefone_fixo', 10);
-            $table->string('str_telefone_celular', 11);
+            $table->string('str_nome', 200)->nullable();
+            $table->date('dta_nascimento')->nullable();
+            $table->string('str_rua', 50)->nullable();
+            $table->string('str_numero', 10)->nullable();
+            $table->string('str_cep', 8)->nullable();
+            $table->string('str_cidade', 100)->nullable();
+            $table->string('str_estado', 2)->nullable();
+            $table->string('str_telefone_fixo', 10)->nullable();
+            $table->string('str_telefone_celular', 11)->nullable();
         });
     }
 

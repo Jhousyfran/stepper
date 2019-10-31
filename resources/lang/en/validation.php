@@ -145,6 +145,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'str_nome' => 'Nome Completo'
+    ],
 
 ];
