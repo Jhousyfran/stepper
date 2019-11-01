@@ -2,7 +2,7 @@
 Desafio para programador backend
 
 #### Problema
-##### 1. Criar um formulário de cadastro em três passos com os seguintes campos:
+1. Criar um formulário de cadastro em três passos com os seguintes campos:
 - a. Passo 1: Nome Completo
 - b. Passo 1: Data de Nascimento
 - c. Passo 2: Endereço (Rua, Número, CEP, Cidade, Estado) (não precisa consultar base de CEP)
@@ -18,12 +18,12 @@ Desafio para programador backend
 
 #### Implementação do código em ambiente Linux
 1. Faça o clone o deste repositório, após isso será necessário instalar as dependências do projeto.
-2. Através do terminal, entre na pasta clonada e execute o comando
-    ..* composer install
+2. Através do terminal, entre na pasta clonada e execute o comando:
+    * composer install
 3. Agora será necessário da permisões em algumas pasta antes de rodar o projeto. Ainda no terminal execute o comando:
-    ..* sudo chmod 775 -R bootstrap/cache storage/
+    * sudo chmod 775 -R bootstrap/cache storage/
 4. Na sua IDE, faça uma copia do arquivo '.env.example' que fica na pasta raiz do projeto, e altere o nome da copia para '.env'.
-    *Caso queira usar um bando de dados com Mysql, PostgreSQL, MSSQL e etc, altere:
+    * Caso queira usar um bando de dados com Mysql, PostgreSQL, MSSQL e etc, altere:
         * DB_CONNECTION= tipo-de-conexo
         * DB_HOST= endereco-do-banco
         * DB_PORT= porta-do-banco
@@ -31,8 +31,8 @@ Desafio para programador backend
         * DB_USERNAME= usuario-do-banco
         * DB_PASSWORD= senha
         * Obs: Alterar as frases aoós o sinal de "=", por valores reais
-    *Caso prefira usar sqlite, faça:
-        * DB_CONNECTION=sqlite 
+    * Caso prefira usar sqlite, faça:
+        * # DB_CONNECTION=sqlite 
         * # DB_HOST= 
         * # DB_PORT= 
         * # DB_DATABASE=
