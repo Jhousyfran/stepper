@@ -9,9 +9,9 @@ use App\Http\Requests\UpdateIdentificacao;
 
 class CadastroController extends Controller
 {
-    public function create()
+    public function index()
     {
-
+        return redirect('/');
     }
 
     public function show(Cadastro $cadastro)
@@ -35,13 +35,16 @@ class CadastroController extends Controller
 
     public function update(Cadastro $cadastro, UpdateIdentificacao $request)
     {
+        
+        $request->str_cep =  $request->str_cep ? preg_replace("/[^0-9]/", "", $request->str_cep) : NULL;
+        $request->str_telefone_fixo =  $request->str_telefone_fixo ? preg_replace("/[^0-9]/", "", $request->str_telefone_fixo) : NULL;
+        $request->str_telefone_celular =  $request->str_telefone_celular ? preg_replace("/[^0-9]/", "", $request->str_telefone_celular) : NULL;
+
+
         DB::beginTransaction();
 
         try {
-            
-            $request->str_cep =  $request->str_cep ? preg_replace("/[^0-9]/", "", $request->str_cep) : NULL;
-            $request->str_telefone_fixo =  $request->str_telefone_fixo ? preg_replace("/[^0-9]/", "", $request->str_telefone_fixo) : NULL;
-            $request->str_telefone_celular =  $request->str_telefone_celular ? preg_replace("/[^0-9]/", "", $request->str_telefone_celular) : NULL;
+
             $cadastro->update($request->all());
             
             if($request->str_nome)

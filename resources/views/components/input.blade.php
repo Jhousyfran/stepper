@@ -1,5 +1,5 @@
 <div class="form-group">    
-    <label class="font-weight-bold" for="DataDeNascimento">{{ $label }}
+    <label class="font-weight-bold" for="DataDeNascimento">{{ $label ?? '' }}
         @if($required)
             <span class="text-danger">*</span>
         @endif
