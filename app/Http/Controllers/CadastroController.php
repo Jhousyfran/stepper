@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use DB;
 use App\Cadastro;
 use App\Http\Requests\UpdateIdentificacao;
+use App\Http\Requests\CreateOrUpdateCpf;
 
 class CadastroController extends Controller
 {
@@ -23,9 +24,13 @@ class CadastroController extends Controller
         return view('cadastro', compact('cadastro'));
     }
 
-    public function store(Request $request)
+    public function store(CreateOrUpdateCpf $request)
     {
         $cpf = preg_replace("/[^0-9]/", "", $request->str_cpf);
+        
+        if(!Cadastro::validaCPF($cpf)){
+            return back()->withInput()->with('cpf_invalido', 'CPF inválido');
+        }
 
         $cadastro = Cadastro::firstOrCreate(['str_cpf' => $cpf ]);
         $cadastro->save();

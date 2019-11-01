@@ -144,6 +144,7 @@ return [
     */
 
     'attributes' => [
+        'str_cpf' => 'CPF',
         'str_nome' => 'Nome Completo',
         'dta_nascimento' => 'Data de Nascimento',
         'str_rua' => 'Rua',

@@ -17,10 +17,20 @@
                     <br>
                 </div>
                     <div class="col-md-3 offset-md-4">
-                        <input type="text" name="str_cpf" class="form-control" id="inputCpf" placeholder="Ex: 123.456.789-00" onchange="validarCPF(this);">
-                        <div class="invalid-feedback" id="cpfInvalido" style="display:none;">
+                        <input type="text" name="str_cpf" class="form-control @error('str_cpf') is-invalid @enderror @if(session('cpf_invalido')) is-invalid  @endif" value="{{ old('str_cpf') }}" id="inputCpf" placeholder="Ex: 123.456.789-00" required > 
+                        @if(session('cpf_invalido'))
+                            <div class="invalid-feedback" style="display:block;">
+                                {{ session('cpf_invalido') }}
+                            </div>
+                        @endif
+                        <div class="invalid-feedback" id="cpfInvalido" style="display:none;" >
                             CPF inválido.
                         </div>
+                        @error('str_cpf')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="col-md-4">
                         <button type="submit" class="btn btn-primary mb-2" id="buttonEnviar">
