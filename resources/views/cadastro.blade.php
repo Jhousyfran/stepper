@@ -16,7 +16,7 @@
                     </li>
                 </ul>
             </div>
-        </div>            
+        </div>          
         <div class="col-md-8 offset-md-2" style="margin-top:50px;">
             <form action="{{ url('cadastro/'.$cadastro->id) }}" method="POST">
                 {{ csrf_field() }}
@@ -51,7 +51,24 @@
                 </button>
 
             </form>
-        </div>            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <br>
+            @if(session('error_update'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('error_update') }}
+                </div>
+            @endif
+            @if(session('finish_update'))
+                <div class="alert alert-success" role="alert">
+                    {{ session('finish_update') }}, 
+                    para sair
+                    <a href="{{ url('/') }}">clique aqui  :)</a>
+                </div> 
+            @endif            
+        </div>
     </div>
 
     <style>

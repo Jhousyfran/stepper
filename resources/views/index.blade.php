@@ -25,6 +25,7 @@
         <script>
             $(document).ready(function(){
                 $("#inputCpf").mask("000.000.000-00");
+                $("#str_cep").mask("00000-000");
                 $("#str_telefone_fixo").mask("(00) 0000-0000");
                 $("#str_telefone_celular").mask("(00) 00000-0000");
             });

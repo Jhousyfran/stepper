@@ -40,17 +40,16 @@ class CadastroController extends Controller
 
     public function update(Cadastro $cadastro, UpdateIdentificacao $request)
     {
-        
-        $request->str_cep =  $request->str_cep ? preg_replace("/[^0-9]/", "", $request->str_cep) : NULL;
-        $request->str_telefone_fixo =  $request->str_telefone_fixo ? preg_replace("/[^0-9]/", "", $request->str_telefone_fixo) : NULL;
-        $request->str_telefone_celular =  $request->str_telefone_celular ? preg_replace("/[^0-9]/", "", $request->str_telefone_celular) : NULL;
-
+        $inpus = $request->except('str_cep', 'str_telefone_fixo', 'str_telefone_celular');
+        $inpus['str_cep'] =  $request->str_cep ? preg_replace("/[^0-9]/", "", $request->str_cep) : $cadastro->str_cep;
+        $inpus['str_telefone_fixo'] =  $request->str_telefone_fixo ? preg_replace("/[^0-9]/", "", $request->str_telefone_fixo) : $cadastro->str_telefone_fixo;
+        $inpus['str_telefone_celular'] =  $request->str_telefone_celular ? preg_replace("/[^0-9]/", "", $request->str_telefone_celular) : $cadastro->str_telefone_celular;
 
         DB::beginTransaction();
 
         try {
 
-            $cadastro->update($request->all());
+            $cadastro->update($inpus);
             
             if($request->str_nome)
                 $cadastro->int_passo = 2;
@@ -63,8 +62,11 @@ class CadastroController extends Controller
 
         } catch (\Exception $e) {
             DB::rollBack();
-            return redirect()->back();
+            return back()->withInput()->with('error_update', 'Desculpe, não foi possível atualizar o cadastro :( ');
         }
+
+        if($request->str_telefone_celular)
+            $request->session()->flash('finish_update', 'Cadastro concluído com sucesso');
 
         return redirect("cadastro/{$cadastro->id}?passo={$cadastro->int_passo}");
     }

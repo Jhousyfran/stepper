@@ -5,7 +5,7 @@
             [
             "label" => "Telefone Fixo",
             "name" => "str_telefone_fixo",
-            "required" => false,
+            "required" => true,
             "value" => $cadastro->str_telefone_fixo
             ])
             @endcomponent
@@ -15,7 +15,7 @@
         @component('components.input', 
             [ "label" => 'Celular',
             "name" => 'str_telefone_celular',
-            "required" => false,
+            "required" => true,
             "value" => $cadastro->str_telefone_celular
             ])
         @endcomponent

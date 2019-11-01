@@ -46,7 +46,7 @@ class UpdateIdentificacao extends FormRequest
         elseif(FormRequest::get('int_passo') == 3){
             return [
                 'str_telefone_fixo' => [
-                    'regex:/^(\(11\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$/',
+                    'regex:/^\([1-9]\d\)\s9?\d{4}-\d{4}$/',
                     'required',
                     'max:14'
                 ],
