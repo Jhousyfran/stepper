@@ -71,4 +71,10 @@ class CadastroController extends Controller
         return redirect("cadastro/{$cadastro->id}?passo={$cadastro->int_passo}");
     }
 
+    public function lista()
+    {
+        $cadastros = Cadastro::all();
+        return view('cadastros', compact('cadastros'));
+    }
+
 }

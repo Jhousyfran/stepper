@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('cadastro', 'CadastroController');
+Route::get('cadastros', 'CadastroController@lista');
