@@ -2,7 +2,7 @@
 Desafio para programador backend
 
 #### Problema
-1. Criar um formulário de cadastro em três passos com os seguintes campos:
+##### 1. Criar um formulário de cadastro em três passos com os seguintes campos:
 - a. Passo 1: Nome Completo
 - b. Passo 1: Data de Nascimento
 - c. Passo 2: Endereço (Rua, Número, CEP, Cidade, Estado) (não precisa consultar base de CEP)
