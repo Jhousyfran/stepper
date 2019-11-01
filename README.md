@@ -24,23 +24,23 @@ Desafio para programador backend
     ..* sudo chmod 775 -R bootstrap/cache storage/
 4. Na sua IDE, faça uma copia do arquivo '.env.example' que fica na pasta raiz do projeto, e altere o nome da copia para '.env'.
     .. 1. Caso queira usar um bando de dados com Mysql, PostgreSQL, MSSQL e etc, altere:
-            ..* DB_CONNECTION= tipo-de-conexo
-            ..* DB_HOST= endereco-do-banco
-            ..* DB_PORT= porta-do-banco
-            ..* DB_DATABASE= nome-do-banco
-            ..* DB_USERNAME= usuario-do-banco
-            ..* DB_PASSWORD= senha
+            - DB_CONNECTION= tipo-de-conexo
+            - DB_HOST= endereco-do-banco
+            - DB_PORT= porta-do-banco
+            - DB_DATABASE= nome-do-banco
+            - DB_USERNAME= usuario-do-banco
+            - DB_PASSWORD= senha
             Obs: Alterar as frases aoós o sinal de "=", por valores reais
     .. 2. Caso prefira usar sqlite, faça:
-            ..* DB_CONNECTION=sqlite 
-            ..* # DB_HOST= 
-            ..* # DB_PORT= 
-            ..* # DB_DATABASE=
-            ..* # DB_USERNAME=
-            ..* # DB_PASSWORD=
+            - DB_CONNECTION=sqlite 
+            - # DB_HOST= 
+            - # DB_PORT= 
+            - # DB_DATABASE=
+            - # DB_USERNAME=
+            - # DB_PASSWORD=
             Obs: Será necessário crir o arquivo 'database.sqlite' dentro da pasta 'database' que está na raiz do projeto.
 5. No terminal, depois de acessar a raiz do projeto, execute o comando:
-    ..* php artisan migrate
+    - php artisan migrate
 6. E para rodar o projeto, execute:
-    ..* php artisan serve
+    - php artisan serve
 7. Após isso, é só acessar o projeto pela url "localhost:8000" 
