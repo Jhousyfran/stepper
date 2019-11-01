@@ -40,7 +40,7 @@ Desafio para programador backend
         * \# DB_PASSWORD=
         * Obs: Será necessário crir o arquivo 'database.sqlite' dentro da pasta 'database' que está na raiz do projeto.
 5. No terminal, depois de acessar a raiz do projeto, execute o comando:
-- php artisan migrate
+    * php artisan migrate
 6. E para rodar o projeto, execute:
-- php artisan serve
+    * php artisan serve
 7. Após isso, é só acessar o projeto pela url "localhost:8000" 
