@@ -32,12 +32,12 @@ Desafio para programador backend
         * DB_PASSWORD= senha
         * Obs: Alterar as frases aoós o sinal de "=", por valores reais
     * Caso prefira usar sqlite, faça:
-        * # DB_CONNECTION=sqlite 
-        * # DB_HOST= 
-        * # DB_PORT= 
-        * # DB_DATABASE=
-        * # DB_USERNAME=
-        * # DB_PASSWORD=
+        * /# DB_CONNECTION=sqlite 
+        * /# DB_HOST= 
+        * /# DB_PORT= 
+        * /# DB_DATABASE=
+        * /# DB_USERNAME=
+        * /# DB_PASSWORD=
         * Obs: Será necessário crir o arquivo 'database.sqlite' dentro da pasta 'database' que está na raiz do projeto.
 5. No terminal, depois de acessar a raiz do projeto, execute o comando:
 - php artisan migrate
