@@ -32,7 +32,7 @@ Desafio para programador backend
         * DB_PASSWORD= senha
         * Obs: Alterar as frases aoós o sinal de "=", por valores reais
     * Caso prefira usar sqlite, faça:
-        * \# DB_CONNECTION=sqlite 
+        *  DB_CONNECTION=sqlite 
         * \# DB_HOST= 
         * \# DB_PORT= 
         * \# DB_DATABASE=
