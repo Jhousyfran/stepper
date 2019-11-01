@@ -30,7 +30,7 @@ Desafio para programador backend
         * DB_DATABASE= nome-do-banco
         * DB_USERNAME= usuario-do-banco
         * DB_PASSWORD= senha
-        * Obs: Alterar as frases aoós o sinal de "=", por valores reais
+        * Obs: Alterar as frases após o sinal de "=", por valores reais
     * Caso prefira usar sqlite, faça:
         *  DB_CONNECTION=sqlite 
         * \# DB_HOST= 
